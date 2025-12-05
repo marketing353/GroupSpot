@@ -24,7 +24,7 @@ export const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-white border-y border-slate-100">
+    <section className="py-16 md:py-24 bg-white border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-indigo-600 font-bold tracking-wider uppercase text-xs bg-indigo-50 px-3 py-1 rounded-full">The Process</span>

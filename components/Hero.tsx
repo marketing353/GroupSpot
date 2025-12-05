@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   const [platform, setPlatform] = useState<'whatsapp' | 'facebook'>('whatsapp');
 
   return (
-    <section className="relative pt-28 pb-12 md:pt-48 md:pb-32 overflow-hidden mesh-light">
+    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden mesh-light">
       {/* Abstract Shapes in background */}
       <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-br from-indigo-200/20 to-purple-200/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
       <div className="absolute top-1/2 left-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-gradient-to-tr from-blue-100/30 to-teal-100/30 rounded-full blur-3xl -translate-x-1/2 pointer-events-none"></div>

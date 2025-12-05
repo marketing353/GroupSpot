@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-16 md:py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12">
            <div className="max-w-xl">

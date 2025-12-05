@@ -74,20 +74,24 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
     setSubmissionStatus('submitting');
 
     try {
+        const payload = {
+            _subject: `New GroupSpot Lead: ${formData.name} (${role})`,
+            _template: "table",
+            _captcha: "false", // Disable captcha for smoother experience
+            Role: role,
+            ...formData
+        };
+
         const response = await fetch("https://formsubmit.co/ajax/shaheertiger1@gmail.com", {
             method: "POST",
             headers: { 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({
-                _subject: `New GroupSpot Lead: ${formData.name} (${role})`,
-                _template: "table",
-                _captcha: "false", // Disable captcha for smoother experience
-                Role: role,
-                ...formData
-            })
+            body: JSON.stringify(payload)
         });
+
+        const result = await response.json().catch(() => ({}));
 
         if (response.ok) {
             setSubmissionStatus('success');
@@ -105,7 +109,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
                 email: ''
             });
         } else {
-            console.error("Server responded with error", response);
+            console.error("Server responded with error", result);
             setSubmissionStatus('error');
         }
     } catch (error) {
@@ -278,7 +282,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
                                         key={b}
                                         type="button"
                                         onClick={() => setFormData(prev => ({ ...prev, budget: b }))}
-                                        className={`flex-1 rounded-lg py-2 px-3 text-sm text-center transition-all ${
+                                        className={`flex-1 rounded-lg py-3 px-3 text-sm text-center transition-all ${
                                             formData.budget === b 
                                             ? 'border border-indigo-500 bg-indigo-50 font-bold text-indigo-700 ring-1 ring-indigo-500' 
                                             : 'border border-slate-200 hover:bg-slate-50 hover:border-slate-300'
