@@ -30,6 +30,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
     platform: 'WhatsApp',
     memberCount: '100 - 1,000 members',
     groupLink: '',
+    groupDescription: '',
     country: 'CA',
     region: 'Ontario',
     businessType: '',
@@ -57,7 +58,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
 
   if (!isOpen) return null;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -95,6 +96,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
                 platform: 'WhatsApp',
                 memberCount: '100 - 1,000 members',
                 groupLink: '',
+                groupDescription: '',
                 country: 'CA',
                 region: 'Ontario',
                 businessType: '',
@@ -208,7 +210,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
                             </select>
                         </div>
                         <div>
-                            <label className="block text-sm font-bold text-slate-700 mb-1.5">Group Link (Optional for now)</label>
+                            <label className="block text-sm font-bold text-slate-700 mb-1.5">Group Link (Optional)</label>
                             <input 
                                 type="url" 
                                 name="groupLink"
@@ -216,6 +218,16 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
                                 onChange={handleChange}
                                 className="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all text-base" 
                                 placeholder="chat.whatsapp.com/..." 
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-bold text-slate-700 mb-1.5">Group Description (Optional)</label>
+                            <textarea 
+                                name="groupDescription"
+                                value={formData.groupDescription}
+                                onChange={handleChange}
+                                className="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all text-base resize-none h-24" 
+                                placeholder="Briefly describe your group's topic or audience..." 
                             />
                         </div>
                        </>

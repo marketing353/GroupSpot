@@ -100,13 +100,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         <div className="inline-flex bg-slate-100 p-1.5 rounded-xl mb-8 md:mb-10 animate-slide-up shadow-inner relative z-30 max-w-full overflow-hidden" style={{ animationDelay: '0.15s' }}>
             <button 
                 onClick={() => setPlatform('whatsapp')}
-                className={`px-4 py-3 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[130px] justify-center ${platform === 'whatsapp' ? 'bg-white shadow-md text-[#075E54] ring-1 ring-black/5' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
+                className={`px-4 py-3 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[130px] justify-center ${platform === 'whatsapp' ? 'bg-white shadow-md text-[#075E54] ring-1 ring-black/5 scale-[1.02]' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
             >
                 <span className="w-2.5 h-2.5 rounded-full bg-[#25D366] shrink-0"></span> WhatsApp
             </button>
             <button 
                 onClick={() => setPlatform('facebook')}
-                className={`px-4 py-3 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[130px] justify-center ${platform === 'facebook' ? 'bg-white shadow-md text-blue-600 ring-1 ring-black/5' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
+                className={`px-4 py-3 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[130px] justify-center ${platform === 'facebook' ? 'bg-white shadow-md text-blue-600 ring-1 ring-black/5 scale-[1.02]' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
             >
                 <span className="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0"></span> Facebook
             </button>
@@ -195,7 +195,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                <div className={`absolute top-0 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) ${
                    platform === 'whatsapp' 
                    ? 'opacity-100 translate-x-0 scale-100 rotate-0 z-20 blur-none' 
-                   : 'opacity-0 -translate-x-12 scale-95 -rotate-2 z-10 pointer-events-none blur-sm'
+                   : 'opacity-0 -translate-x-24 scale-90 -rotate-6 z-10 pointer-events-none blur-sm'
                }`}>
                     <MockupWhatsappGroup />
                </div>
@@ -204,7 +204,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                <div className={`absolute top-0 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) ${
                    platform === 'facebook' 
                    ? 'opacity-100 translate-x-0 scale-100 rotate-0 z-20 blur-none' 
-                   : 'opacity-0 translate-x-12 scale-95 rotate-2 z-10 pointer-events-none blur-sm'
+                   : 'opacity-0 translate-x-24 scale-90 rotate-6 z-10 pointer-events-none blur-sm'
                }`}>
                     <MockupFacebookGroup />
                </div>
