@@ -11,20 +11,18 @@ import {
   Mic, 
   Camera, 
   CheckCheck, 
-  Image as ImageIcon,
   Sticker,
   Video,
   Phone,
   Globe,
   Bell,
-  ArrowLeft,
-  X
+  ArrowLeft
 } from 'lucide-react';
 
 // --- Shared Components ---
 
 const PhoneFrame = ({ children, time = "9:41" }: { children: React.ReactNode, time?: string }) => (
-  <div className="relative mx-auto w-[280px] xs:w-[320px] sm:w-[360px] h-[580px] xs:h-[650px] md:h-[720px] bg-black rounded-[2.5rem] md:rounded-[3.5rem] p-3 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.5)] ring-4 ring-slate-900/50 select-none overflow-hidden transform transition-transform border border-slate-800 z-10">
+  <div className="relative mx-auto w-[280px] xs:w-[320px] sm:w-[360px] h-[580px] xs:h-[650px] md:h-[720px] bg-black rounded-[2.5rem] md:rounded-[3.5rem] p-3 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.5)] ring-4 ring-slate-900/50 select-none overflow-hidden transform transition-transform border border-slate-800 z-10 max-w-[calc(100vw-32px)]">
     <div className="relative h-full w-full bg-white rounded-[2rem] md:rounded-[2.75rem] overflow-hidden flex flex-col font-sans isolate mask-image:radial-gradient(white, black)">
       {/* Status Bar */}
       <div className="absolute top-0 left-0 right-0 h-12 md:h-14 z-50 flex items-start justify-between px-6 pt-3.5 pointer-events-none mix-blend-difference text-white">
@@ -187,8 +185,13 @@ export const MockupWhatsappGroup: React.FC = () => {
 
         {/* Chat Area */}
         <div className="flex-1 overflow-y-auto bg-[#EFEFEF] relative font-sans p-4 custom-scrollbar">
-             {/* Wallpaper */}
-             <div className="absolute inset-0 opacity-[0.4] bg-repeat pointer-events-none mix-blend-multiply" style={{backgroundImage: "url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')", backgroundSize: "400px"}}></div>
+             {/* Wallpaper - CSS Pattern instead of external image for stability */}
+             <div className="absolute inset-0 opacity-[0.6] bg-repeat pointer-events-none mix-blend-multiply" 
+                  style={{
+                      backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)", 
+                      backgroundSize: "20px 20px"
+                  }}>
+             </div>
 
              <div className="flex justify-center mb-6 relative z-10">
                  <span className="bg-[#E1E5E9] text-[#555] text-[11px] font-medium px-2 py-1 rounded shadow-sm border border-white/20">Today</span>

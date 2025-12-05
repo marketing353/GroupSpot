@@ -82,7 +82,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
         const payload = {
             _subject: `New GroupSpot Lead: ${formData.name} (${role})`,
             _template: "table",
-            _captcha: "false", // Disable captcha for smoother experience
+            _captcha: "false", // Note: FormSubmit may require activation on first use
             Role: role,
             ...formData
         };
@@ -96,7 +96,13 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
             body: JSON.stringify(payload)
         });
 
-        const result = await response.json().catch(() => ({}));
+        // Try to parse JSON, but handle if it fails
+        let result;
+        try {
+            result = await response.json();
+        } catch (jsonError) {
+            console.warn("Could not parse JSON response from FormSubmit", jsonError);
+        }
 
         if (response.ok) {
             setSubmissionStatus('success');
@@ -114,7 +120,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
                 email: ''
             });
         } else {
-            console.error("Server responded with error", result);
+            console.error("Server responded with error", result || response.statusText);
             setSubmissionStatus('error');
         }
     } catch (error) {
@@ -349,7 +355,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
                     {submissionStatus === 'error' && (
                         <div className="bg-red-50 border border-red-100 rounded-lg p-3 text-sm text-red-600 flex items-center gap-2">
                             <AlertCircle size={16} />
-                            Something went wrong. Please try again.
+                            Something went wrong. Please check your connection or try again.
                         </div>
                     )}
 
