@@ -27,6 +27,12 @@
   background: #cbd5e1; 
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .mesh-gradient {
   background-color: #0f172a;
   background-image: 
@@ -47,4 +53,41 @@
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Custom Range Slider for Mobile Touch Optimization */
+.custom-range {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background: #6366f1; /* indigo-500 */
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-top: -10px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.custom-range::-webkit-slider-thumb:active {
+  transform: scale(1.1);
+  background: #4f46e5; /* indigo-600 */
+}
+
+.custom-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #334155; /* slate-700 */
+  border-radius: 9999px;
+}
+
+.custom-range:focus {
+  outline: none;
 }

@@ -19,13 +19,13 @@ import {
 // --- Shared Components ---
 
 const PhoneFrame = ({ children, time = "9:41" }: { children: React.ReactNode, time?: string }) => (
-  <div className="relative mx-auto w-[300px] xs:w-[320px] sm:w-[360px] h-[600px] xs:h-[650px] md:h-[720px] bg-black rounded-[3rem] p-3 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] ring-4 ring-slate-900/50 select-none overflow-hidden transform transition-transform">
+  <div className="relative mx-auto w-[280px] xs:w-[320px] sm:w-[360px] h-[580px] xs:h-[650px] md:h-[720px] bg-black rounded-[2.5rem] md:rounded-[3rem] p-2.5 md:p-3 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.5)] ring-4 ring-slate-900/50 select-none overflow-hidden transform transition-transform">
     {/* Screen Container */}
-    <div className="relative h-full w-full bg-white rounded-[2.5rem] overflow-hidden flex flex-col font-sans isolate">
+    <div className="relative h-full w-full bg-white rounded-[2rem] md:rounded-[2.5rem] overflow-hidden flex flex-col font-sans isolate">
       
       {/* Status Bar (Absolute) */}
-      <div className="absolute top-0 left-0 right-0 h-14 z-50 flex items-start justify-between px-6 pt-4 pointer-events-none mix-blend-difference text-white">
-        <span className="text-[15px] font-semibold tracking-tight">{time}</span>
+      <div className="absolute top-0 left-0 right-0 h-12 md:h-14 z-50 flex items-start justify-between px-5 md:px-6 pt-3 md:pt-4 pointer-events-none mix-blend-difference text-white">
+        <span className="text-[14px] md:text-[15px] font-semibold tracking-tight">{time}</span>
         <div className="flex gap-1.5 items-center pt-1">
              <div className="h-2.5 w-4 bg-current rounded-[1px]"></div> {/* Signal */}
              <div className="h-3.5 w-5 bg-current rounded-sm"></div> {/* Wifi */}
@@ -34,14 +34,14 @@ const PhoneFrame = ({ children, time = "9:41" }: { children: React.ReactNode, ti
       </div>
 
       {/* Dynamic Island */}
-      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-28 h-8 bg-black rounded-full z-[60] pointer-events-none flex justify-center items-center">
-        <div className="w-2 h-2 rounded-full bg-white/20 ml-20"></div>
+      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 md:w-28 h-7 md:h-8 bg-black rounded-full z-[60] pointer-events-none flex justify-center items-center">
+        <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white/20 ml-16 md:ml-20"></div>
       </div>
       
       {children}
       
       {/* Home Indicator */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-black/90 rounded-full z-50 pointer-events-none mix-blend-overlay"></div>
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-28 md:w-32 h-1 bg-black/90 rounded-full z-50 pointer-events-none mix-blend-overlay"></div>
     </div>
   </div>
 );

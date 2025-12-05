@@ -10,8 +10,12 @@ export const Comparison: React.FC = () => {
            <p className="text-slate-600 text-lg">See how GroupSpot stacks up against traditional ads.</p>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-           <div className="overflow-x-auto">
+        <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden relative">
+           
+           {/* Scroll Hint Gradient - Mobile Only */}
+           <div className="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden z-10"></div>
+           
+           <div className="overflow-x-auto pb-2 md:pb-0">
              <div className="min-w-[600px]">
                <div className="grid grid-cols-3 bg-slate-50 border-b border-slate-200">
                   <div className="p-4 md:p-6 font-bold text-slate-500 text-xs md:text-sm uppercase tracking-wider">Feature</div>
@@ -51,8 +55,8 @@ export const Comparison: React.FC = () => {
                </div>
              </div>
            </div>
-           {/* Mobile Scroll Hint */}
-           <div className="md:hidden text-center text-xs text-slate-400 py-3 bg-slate-50/50 italic">
+           {/* Mobile Scroll Hint Text */}
+           <div className="md:hidden text-center text-xs text-slate-400 py-3 bg-slate-50/50 italic border-t border-slate-100">
              Scroll right to see more →
            </div>
         </div>

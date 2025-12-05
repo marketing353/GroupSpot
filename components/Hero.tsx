@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           <div className="flex items-center gap-2 bg-white/80 backdrop-blur-md border border-indigo-100 rounded-full px-3 py-1.5 md:px-4 md:py-1.5 shadow-sm hover:shadow-md transition-shadow cursor-default">
             <div className="flex -space-x-2">
                {[1,2,3,4].map(i => (
-                 <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-slate-200 bg-cover bg-center" style={{backgroundImage: `url(https://i.pravatar.cc/100?img=${i + 10})`}}></div>
+                 <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-slate-200 bg-cover bg-center" style={{backgroundImage: `url(https://images.unsplash.com/photo-${1500000000000 + i}?auto=format&fit=crop&w=100&q=80)`}}></div>
                ))}
             </div>
             <div className="flex items-center gap-1.5 pl-1">
@@ -83,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         </div>
 
         {/* Headline with Dynamic Typewriter */}
-        <h1 className="text-[2.2rem] xs:text-[2.75rem] sm:text-5xl md:text-7xl lg:text-8xl font-extrabold font-display text-slate-900 tracking-tight mb-5 md:mb-8 leading-[1.15] md:leading-[1.05] max-w-5xl mx-auto animate-slide-up px-1">
+        <h1 className="text-4xl xs:text-5xl md:text-7xl lg:text-8xl font-extrabold font-display text-slate-900 tracking-tight mb-5 md:mb-8 leading-[1.15] md:leading-[1.05] max-w-5xl mx-auto animate-slide-up px-1">
           Turn Local <br className="hidden md:block" />
           <TypewriterText words={['Real Estate', 'Mom & Pop', 'Community', 'Buy & Sell', 'Sports']} /> <br className="hidden md:block" />
           Groups into Revenue.
@@ -100,13 +100,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         <div className="inline-flex bg-slate-100 p-1.5 rounded-xl mb-8 md:mb-10 animate-slide-up shadow-inner relative z-30 max-w-full overflow-hidden" style={{ animationDelay: '0.15s' }}>
             <button 
                 onClick={() => setPlatform('whatsapp')}
-                className={`px-4 py-3 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[130px] justify-center ${platform === 'whatsapp' ? 'bg-white shadow-md text-[#075E54] ring-1 ring-black/5 scale-[1.02]' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
+                className={`px-3 py-2.5 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[110px] md:min-w-[130px] justify-center ${platform === 'whatsapp' ? 'bg-white shadow-md text-[#075E54] ring-1 ring-black/5 scale-[1.02]' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
             >
                 <span className="w-2.5 h-2.5 rounded-full bg-[#25D366] shrink-0"></span> WhatsApp
             </button>
             <button 
                 onClick={() => setPlatform('facebook')}
-                className={`px-4 py-3 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[130px] justify-center ${platform === 'facebook' ? 'bg-white shadow-md text-blue-600 ring-1 ring-black/5 scale-[1.02]' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
+                className={`px-3 py-2.5 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[110px] md:min-w-[130px] justify-center ${platform === 'facebook' ? 'bg-white shadow-md text-blue-600 ring-1 ring-black/5 scale-[1.02]' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
             >
                 <span className="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0"></span> Facebook
             </button>
@@ -117,13 +117,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 w-full">
             <div className="relative group w-full sm:w-auto">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl blur opacity-60 group-hover:opacity-100 transition duration-200 animate-pulse-slow"></div>
-              <Button onClick={() => onOpenModal('advertiser')} className="relative w-full sm:w-auto text-base h-14 px-8 bg-slate-900 text-white hover:bg-slate-800 border-none rounded-xl flex items-center justify-center gap-2 font-bold shadow-xl active:scale-[0.98] transition-all touch-manipulation">
+              <Button onClick={() => onOpenModal('advertiser')} className="relative w-full sm:w-auto text-base h-12 md:h-14 px-6 md:px-8 bg-slate-900 text-white hover:bg-slate-800 border-none rounded-xl flex items-center justify-center gap-2 font-bold shadow-xl active:scale-[0.98] transition-all touch-manipulation">
                 Find Groups to Rent <ArrowRight size={18} />
               </Button>
             </div>
             <button 
               onClick={() => onOpenModal('admin')}
-              className="w-full sm:w-auto h-14 px-8 rounded-xl font-bold text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:border-slate-300 shadow-sm transition-all flex items-center justify-center gap-2 active:scale-[0.98] touch-manipulation"
+              className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 rounded-xl font-bold text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:border-slate-300 shadow-sm transition-all flex items-center justify-center gap-2 active:scale-[0.98] touch-manipulation"
             >
               <PlayCircle size={20} className="text-indigo-600" /> I run a Local Group
             </button>
@@ -134,23 +134,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           </div>
         </div>
 
-        {/* Logo Trust Section */}
+        {/* Logo Trust Section - Optimized Grid for Mobile */}
         <div className="mt-12 md:mt-16 pt-8 border-t border-slate-200/60 max-w-4xl mx-auto animate-slide-up px-4" style={{ animationDelay: '0.3s' }}>
            <p className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Trusted by 500+ Local Businesses</p>
-           <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 md:gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-              <div className="flex items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700">
+           <div className="grid grid-cols-2 xs:grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-x-4 gap-y-6 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+              <div className="flex justify-center items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700">
                 <Home className="text-indigo-600 w-4 h-4 md:w-6 md:h-6" /> <span>ReMax</span>
               </div>
-              <div className="flex items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700">
+              <div className="flex justify-center items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700">
                 <Coffee className="text-indigo-600 w-4 h-4 md:w-6 md:h-6" /> <span>DailyGrind</span>
               </div>
-              <div className="flex items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700">
+              <div className="flex justify-center items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700">
                 <Briefcase className="text-indigo-600 w-4 h-4 md:w-6 md:h-6" /> <span>ConsultCo</span>
               </div>
-              <div className="flex items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700">
+              <div className="flex justify-center items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700">
                 <Utensils className="text-indigo-600 w-4 h-4 md:w-6 md:h-6" /> <span>Bistro42</span>
               </div>
-              <div className="flex items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700 hidden xs:flex">
+              <div className="flex justify-center items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700 col-span-2 xs:col-span-1">
                 <Hammer className="text-indigo-600 w-4 h-4 md:w-6 md:h-6" /> <span>ProFix</span>
               </div>
            </div>
@@ -182,7 +182,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
            </div>
 
            {/* Glow Effect behind mockup */}
-           <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] xs:w-[350px] md:w-[600px] h-[280px] xs:h-[350px] md:h-[600px] rounded-full blur-[60px] md:blur-[120px] -z-10 transition-colors duration-500 ${platform === 'whatsapp' ? 'bg-green-500/20' : 'bg-blue-500/20'}`}></div>
+           <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] xs:w-[350px] md:w-[600px] h-[260px] xs:h-[350px] md:h-[600px] rounded-full blur-[60px] md:blur-[120px] -z-10 transition-colors duration-500 ${platform === 'whatsapp' ? 'bg-green-500/20' : 'bg-blue-500/20'}`}></div>
            
            {/* Animated Mockups Container */}
            <div className="relative z-10 flex justify-center">

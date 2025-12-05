@@ -42,7 +42,7 @@ export const IncomeCalculator: React.FC<CalculatorProps> = ({ onOpenModal }) => 
                     <span>You hold final veto power</span>
                  </li>
               </ul>
-              <Button onClick={() => onOpenModal('admin')} variant="primary" className="bg-white text-slate-950 hover:bg-slate-200 border-none px-8 h-12 rounded-xl font-bold shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+              <Button onClick={() => onOpenModal('admin')} variant="primary" className="bg-white text-slate-950 hover:bg-slate-200 border-none px-8 h-12 rounded-xl font-bold shadow-[0_0_20px_rgba(255,255,255,0.3)] w-full md:w-auto">
                  Claim Your Group
               </Button>
            </div>
@@ -78,7 +78,7 @@ export const IncomeCalculator: React.FC<CalculatorProps> = ({ onOpenModal }) => 
                         step="1000" 
                         value={members}
                         onChange={(e) => setMembers(parseInt(e.target.value))}
-                        className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-indigo-500 hover:accent-indigo-400 transition-all z-10 relative touch-manipulation"
+                        className="custom-range z-10 relative touch-manipulation"
                         />
                     </div>
                     <div className="flex justify-between text-[10px] text-slate-600 mt-2 font-mono">
