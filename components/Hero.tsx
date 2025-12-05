@@ -43,7 +43,7 @@ const TypewriterText = ({ words }: { words: string[] }) => {
   }, [subIndex, index, reverse, words]);
 
   return (
-    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 whitespace-nowrap">
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 whitespace-nowrap inline-block min-h-[1.2em]">
       {words[index].substring(0, subIndex)}
       <span className={`text-indigo-600 ${blink ? 'opacity-100' : 'opacity-0'}`}>|</span>
     </span>
@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   const [platform, setPlatform] = useState<'whatsapp' | 'facebook'>('whatsapp');
 
   return (
-    <section className="relative pt-24 pb-16 md:pt-48 md:pb-32 overflow-hidden mesh-light">
+    <section className="relative pt-28 pb-20 md:pt-48 md:pb-32 overflow-hidden mesh-light">
       {/* Abstract Shapes in background */}
       <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-br from-indigo-200/20 to-purple-200/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
       <div className="absolute top-1/2 left-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-gradient-to-tr from-blue-100/30 to-teal-100/30 rounded-full blur-3xl -translate-x-1/2 pointer-events-none"></div>
@@ -83,30 +83,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         </div>
 
         {/* Headline with Dynamic Typewriter - Scaled down for mobile */}
-        <h1 className="text-3xl xs:text-4xl md:text-7xl lg:text-8xl font-extrabold font-display text-slate-900 tracking-tight mb-4 md:mb-8 leading-[1.15] md:leading-[1.05] max-w-5xl mx-auto animate-slide-up px-1">
+        {/* Added min-h to container to prevent layout shifts on mobile when text wraps */}
+        <h1 className="text-3xl xs:text-4xl md:text-7xl lg:text-8xl font-extrabold font-display text-slate-900 tracking-tight mb-4 md:mb-8 leading-[1.15] md:leading-[1.05] max-w-5xl mx-auto animate-slide-up px-1 min-h-[3.6em] md:min-h-0 flex flex-col md:block items-center">
           Turn Local <br className="hidden md:block" />
           <TypewriterText words={['Real Estate', 'Mom & Pop', 'Community', 'Buy & Sell', 'Sports']} /> <br className="hidden md:block" />
           Groups into Revenue.
         </h1>
 
         {/* Subhead */}
-        <p className="text-sm xs:text-base md:text-xl text-slate-600 mb-6 md:mb-10 leading-relaxed max-w-2xl mx-auto animate-slide-up font-medium px-4" style={{ animationDelay: '0.1s' }}>
+        <p className="text-sm xs:text-base md:text-xl text-slate-600 mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto animate-slide-up font-medium px-4" style={{ animationDelay: '0.1s' }}>
           <strong>Advertisers:</strong> Reach customers in their DMs, not their spam folder.<br className="hidden sm:block"/>
           <span className="sm:hidden"> </span>
           <strong>Admins:</strong> Get paid passive income to pin messages & rent covers.
         </p>
 
-        {/* Platform Toggle - Optimized for Mobile Touch */}
+        {/* Platform Toggle - Optimized for Mobile Touch (Min Height 44px) */}
         <div className="inline-flex bg-slate-100 p-1.5 rounded-xl mb-6 md:mb-10 animate-slide-up shadow-inner relative z-30 max-w-full overflow-hidden" style={{ animationDelay: '0.15s' }}>
             <button 
                 onClick={() => setPlatform('whatsapp')}
-                className={`px-3 py-2.5 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[110px] md:min-w-[130px] justify-center ${platform === 'whatsapp' ? 'bg-white shadow-md text-[#075E54] ring-1 ring-black/5 scale-[1.02]' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
+                className={`px-3 py-3 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[110px] md:min-w-[130px] justify-center ${platform === 'whatsapp' ? 'bg-white shadow-md text-[#075E54] ring-1 ring-black/5 scale-[1.02]' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
             >
                 <span className="w-2.5 h-2.5 rounded-full bg-[#25D366] shrink-0"></span> WhatsApp
             </button>
             <button 
                 onClick={() => setPlatform('facebook')}
-                className={`px-3 py-2.5 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[110px] md:min-w-[130px] justify-center ${platform === 'facebook' ? 'bg-white shadow-md text-blue-600 ring-1 ring-black/5 scale-[1.02]' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
+                className={`px-3 py-3 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[110px] md:min-w-[130px] justify-center ${platform === 'facebook' ? 'bg-white shadow-md text-blue-600 ring-1 ring-black/5 scale-[1.02]' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
             >
                 <span className="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0"></span> Facebook
             </button>
@@ -136,8 +137,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
 
         {/* Logo Trust Section - Optimized Grid for Mobile */}
         <div className="mt-12 md:mt-16 pt-8 border-t border-slate-200/60 max-w-4xl mx-auto animate-slide-up px-4" style={{ animationDelay: '0.3s' }}>
-           <p className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Trusted by 500+ Local Businesses</p>
-           <div className="grid grid-cols-2 xs:grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-x-4 gap-y-6 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+           <p className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">Trusted by 500+ Local Businesses</p>
+           <div className="grid grid-cols-2 xs:grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-x-4 gap-y-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
               <div className="flex justify-center items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700">
                 <Home className="text-indigo-600 w-4 h-4 md:w-6 md:h-6" /> <span>ReMax</span>
               </div>
@@ -185,7 +186,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] xs:w-[350px] md:w-[600px] h-[260px] xs:h-[350px] md:h-[600px] rounded-full blur-[60px] md:blur-[120px] -z-10 transition-colors duration-500 ${platform === 'whatsapp' ? 'bg-green-500/20' : 'bg-blue-500/20'}`}></div>
            
            {/* Animated Mockups Container */}
-           <div className="relative z-10 flex justify-center">
+           <div className="relative z-10 flex justify-center w-fit mx-auto">
                {/* Invisible Spacer to maintain height */}
                <div className="opacity-0 pointer-events-none" aria-hidden="true">
                     <MockupWhatsappGroup />

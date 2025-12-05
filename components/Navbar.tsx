@@ -97,9 +97,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
                 Group<span className="text-indigo-600">Spot</span>
               </span>
             </div>
+            {/* Increased padding for easier closing */}
             <button 
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2 -mr-2 text-slate-400 hover:text-slate-600 active:bg-slate-100 rounded-full transition-colors"
+              className="p-3 -mr-3 text-slate-400 hover:text-slate-600 active:bg-slate-100 rounded-full transition-colors"
+              aria-label="Close menu"
             >
               <X size={24} />
             </button>

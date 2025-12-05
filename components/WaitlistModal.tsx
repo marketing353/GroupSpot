@@ -53,7 +53,12 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
     if (isOpen) {
       setStep(1);
       setSubmissionStatus('idle');
+      // Lock body scroll
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
     }
+    return () => { document.body.style.overflow = 'unset'; }
   }, [isOpen]);
 
   if (!isOpen) return null;
@@ -121,12 +126,14 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
   const progress = step === 1 ? '50%' : '100%';
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up duration-200 flex flex-col max-h-[90vh]">
+    // Z-index boosted to 100 to appear ABOVE the navbar (z-60)
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
+      {/* Used max-h-[90dvh] for mobile browser address bar compatibility */}
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up duration-200 flex flex-col max-h-[90vh] md:max-h-[85dvh]">
         
         {/* Header - Hidden on Success View */}
         {submissionStatus !== 'success' && (
-          <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50 relative overflow-hidden">
+          <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50 relative overflow-hidden shrink-0">
              {/* Progress Bar */}
              <div className="absolute bottom-0 left-0 h-1 bg-indigo-100 w-full">
                 <div className="h-full bg-indigo-600 transition-all duration-300 ease-out" style={{ width: progress }}></div>
@@ -151,7 +158,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
           </div>
         )}
         
-        <div className="p-6 overflow-y-auto">
+        <div className="p-6 overflow-y-auto overscroll-contain">
           {submissionStatus === 'success' ? (
             <div className="flex flex-col items-center justify-center text-center py-8 animate-fade-in">
               <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6 shadow-sm">
@@ -282,7 +289,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
                                         key={b}
                                         type="button"
                                         onClick={() => setFormData(prev => ({ ...prev, budget: b }))}
-                                        className={`flex-1 rounded-lg py-3 px-3 text-sm text-center transition-all ${
+                                        className={`flex-1 rounded-lg py-3 px-3 text-sm text-center transition-all touch-manipulation ${
                                             formData.budget === b 
                                             ? 'border border-indigo-500 bg-indigo-50 font-bold text-indigo-700 ring-1 ring-indigo-500' 
                                             : 'border border-slate-200 hover:bg-slate-50 hover:border-slate-300'
@@ -299,7 +306,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
                    <Button type="submit" className="w-full mt-2 h-12 text-base">
                      Next Step <ArrowRight size={18} />
                    </Button>
-                   <button type="button" onClick={onClose} className="w-full py-3 text-sm font-semibold text-slate-400 hover:text-slate-600 transition-colors">
+                   <button type="button" onClick={onClose} className="w-full py-4 text-sm font-semibold text-slate-400 hover:text-slate-600 transition-colors touch-manipulation">
                      Cancel
                    </button>
                 </div>
