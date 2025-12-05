@@ -15,8 +15,8 @@ export const Comparison: React.FC = () => {
            {/* Scroll Hint Gradient - Mobile Only */}
            <div className="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden z-10"></div>
            
-           {/* Animated Swipe Hint Overlay */}
-           <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none md:hidden animate-fade-out opacity-0" style={{animation: 'fadeOut 2s ease-in 2s forwards'}}>
+           {/* Animated Swipe Hint Overlay - Fixed Animation */}
+           <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none md:hidden animate-fade-out" style={{animationDelay: '1.5s', animationDuration: '0.5s', animationFillMode: 'forwards'}}>
               <div className="bg-slate-900/80 backdrop-blur text-white px-4 py-2 rounded-full flex items-center gap-2 text-sm font-bold shadow-xl">
                  Swipe <ArrowRight size={16} className="animate-bounce-right" />
               </div>

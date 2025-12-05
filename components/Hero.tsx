@@ -83,8 +83,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         </div>
 
         {/* Headline with Dynamic Typewriter - Scaled down for mobile */}
-        {/* Added min-h to container to prevent layout shifts on mobile when text wraps */}
-        <h1 className="text-3xl xs:text-4xl md:text-7xl lg:text-8xl font-extrabold font-display text-slate-900 tracking-tight mb-4 md:mb-8 leading-[1.15] md:leading-[1.05] max-w-5xl mx-auto animate-slide-up px-1 min-h-[3.6em] md:min-h-0 flex flex-col md:block items-center">
+        {/* Increased min-h to prevent layout shifts on multi-line wraps for mobile */}
+        <h1 className="text-3xl xs:text-4xl md:text-7xl lg:text-8xl font-extrabold font-display text-slate-900 tracking-tight mb-4 md:mb-8 leading-[1.15] md:leading-[1.05] max-w-5xl mx-auto animate-slide-up px-1 min-h-[4em] xs:min-h-[3.6em] md:min-h-0 flex flex-col md:block items-center">
           Turn Local <br className="hidden md:block" />
           <TypewriterText words={['Real Estate', 'Mom & Pop', 'Community', 'Buy & Sell', 'Sports']} /> <br className="hidden md:block" />
           Groups into Revenue.
