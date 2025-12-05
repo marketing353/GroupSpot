@@ -34,6 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
     } else {
       document.body.style.overflow = 'unset';
     }
+    return () => { document.body.style.overflow = 'unset'; }
   }, [mobileMenuOpen]);
 
   return (
@@ -65,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
             {/* Mobile Toggle - Larger Touch Target */}
             <button 
-              className="md:hidden text-slate-900 p-2.5 -mr-2 active:bg-slate-100 rounded-full transition-colors focus:outline-none" 
+              className="md:hidden text-slate-900 p-2.5 -mr-2 active:bg-slate-100 rounded-full transition-colors focus:outline-none touch-manipulation" 
               onClick={() => setMobileMenuOpen(true)} 
               aria-label="Open menu"
             >
@@ -85,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
       {/* Mobile Menu Drawer - Slides from Left */}
       {mobileMenuOpen && (
-        <div className="fixed top-0 left-0 bottom-0 w-[85%] max-w-[320px] z-[70] bg-white shadow-2xl animate-slide-in-left md:hidden flex flex-col h-full border-r border-slate-100">
+        <div className="fixed top-0 left-0 bottom-0 w-[85%] max-w-[320px] z-[70] bg-white shadow-2xl animate-slide-in-left md:hidden flex flex-col h-full border-r border-slate-100 will-change-transform select-none">
           
           {/* Drawer Header */}
           <div className="p-6 flex items-center justify-between border-b border-slate-100 bg-slate-50/50">
@@ -100,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
             {/* Increased padding for easier closing */}
             <button 
               onClick={() => setMobileMenuOpen(false)}
-              className="p-3 -mr-3 text-slate-400 hover:text-slate-600 active:bg-slate-100 rounded-full transition-colors"
+              className="p-3 -mr-3 text-slate-400 hover:text-slate-600 active:bg-slate-100 rounded-full transition-colors touch-manipulation"
               aria-label="Close menu"
             >
               <X size={24} />
@@ -114,7 +115,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
             
             <button 
               onClick={() => { onOpenModal('admin'); setMobileMenuOpen(false); }} 
-              className="w-full flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-indigo-50 active:bg-indigo-100 text-slate-900 font-semibold group transition-colors"
+              className="w-full flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-indigo-50 active:bg-indigo-100 text-slate-900 font-semibold group transition-colors touch-manipulation"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-indigo-600 group-hover:border-indigo-200">
@@ -127,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
             <button 
               onClick={() => { onOpenModal('advertiser'); setMobileMenuOpen(false); }} 
-              className="w-full flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-indigo-50 active:bg-indigo-100 text-slate-900 font-semibold group transition-colors"
+              className="w-full flex items-center justify-between p-4 rounded-xl bg-slate-50 hover:bg-indigo-50 active:bg-indigo-100 text-slate-900 font-semibold group transition-colors touch-manipulation"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-indigo-600 group-hover:border-indigo-200">
@@ -144,7 +145,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
             <button 
               onClick={() => { onOpenModal('advertiser'); setMobileMenuOpen(false); }} 
-              className="w-full flex items-center gap-3 p-4 rounded-xl hover:bg-slate-50 active:bg-slate-100 text-slate-600 font-medium transition-colors"
+              className="w-full flex items-center gap-3 p-4 rounded-xl hover:bg-slate-50 active:bg-slate-100 text-slate-600 font-medium transition-colors touch-manipulation"
             >
               <LogIn size={20} />
               Log In
@@ -152,7 +153,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
             <button 
               onClick={() => { onOpenModal('admin'); setMobileMenuOpen(false); }} 
-              className="w-full flex items-center gap-3 p-4 rounded-xl hover:bg-slate-50 active:bg-slate-100 text-slate-600 font-medium transition-colors"
+              className="w-full flex items-center gap-3 p-4 rounded-xl hover:bg-slate-50 active:bg-slate-100 text-slate-600 font-medium transition-colors touch-manipulation"
             >
               <UserCircle size={20} />
               Create Account
@@ -161,7 +162,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
           {/* Drawer Footer */}
           <div className="p-6 border-t border-slate-100 bg-slate-50/30">
-             <Button onClick={() => { onOpenModal('advertiser'); setMobileMenuOpen(false); }} className="w-full h-12 text-base shadow-lg shadow-indigo-500/20 rounded-xl justify-between px-6">
+             <Button onClick={() => { onOpenModal('advertiser'); setMobileMenuOpen(false); }} className="w-full h-12 text-base shadow-lg shadow-indigo-500/20 rounded-xl justify-between px-6 touch-manipulation">
                 Get Started
                 <ArrowRight size={18} />
              </Button>

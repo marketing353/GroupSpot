@@ -34,7 +34,7 @@ export default {
         'fade-in': 'fadeIn 0.5s ease-out',
         'fade-out': 'fadeOut 0.5s ease-out forwards',
         'slide-up': 'slideUp 0.6s ease-out',
-        'slide-in-left': 'slideInLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-in-left': 'slideInLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 3s infinite',
         'bounce-right': 'bounceRight 1s infinite',
