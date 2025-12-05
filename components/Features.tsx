@@ -1,6 +1,5 @@
 import React from 'react';
-import { Store, Users, MapPin, BarChart3, ShieldCheck, Zap, ArrowUpRight, MessageCircle } from 'lucide-react';
-import { ValuePropProps } from '../types';
+import { ShieldCheck, Zap, MapPin, MessageCircle } from 'lucide-react';
 
 export const Features: React.FC = () => {
   return (
