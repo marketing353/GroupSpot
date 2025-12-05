@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   const [platform, setPlatform] = useState<'whatsapp' | 'facebook'>('whatsapp');
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden mesh-light">
+    <section className="relative pt-24 pb-16 md:pt-48 md:pb-32 overflow-hidden mesh-light">
       {/* Abstract Shapes in background */}
       <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-br from-indigo-200/20 to-purple-200/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
       <div className="absolute top-1/2 left-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-gradient-to-tr from-blue-100/30 to-teal-100/30 rounded-full blur-3xl -translate-x-1/2 pointer-events-none"></div>
@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
         
         {/* CRO: Social Proof Badge Above Headline */}
-        <div className="flex justify-center mb-6 md:mb-8 animate-fade-in">
+        <div className="flex justify-center mb-5 md:mb-8 animate-fade-in">
           <div className="flex items-center gap-2 bg-white/80 backdrop-blur-md border border-indigo-100 rounded-full px-3 py-1.5 md:px-4 md:py-1.5 shadow-sm hover:shadow-md transition-shadow cursor-default">
             <div className="flex -space-x-2">
                {[1,2,3,4].map(i => (
@@ -82,22 +82,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           </div>
         </div>
 
-        {/* Headline with Dynamic Typewriter */}
-        <h1 className="text-4xl xs:text-5xl md:text-7xl lg:text-8xl font-extrabold font-display text-slate-900 tracking-tight mb-5 md:mb-8 leading-[1.15] md:leading-[1.05] max-w-5xl mx-auto animate-slide-up px-1">
+        {/* Headline with Dynamic Typewriter - Scaled down for mobile */}
+        <h1 className="text-3xl xs:text-4xl md:text-7xl lg:text-8xl font-extrabold font-display text-slate-900 tracking-tight mb-4 md:mb-8 leading-[1.15] md:leading-[1.05] max-w-5xl mx-auto animate-slide-up px-1">
           Turn Local <br className="hidden md:block" />
           <TypewriterText words={['Real Estate', 'Mom & Pop', 'Community', 'Buy & Sell', 'Sports']} /> <br className="hidden md:block" />
           Groups into Revenue.
         </h1>
 
         {/* Subhead */}
-        <p className="text-sm xs:text-base md:text-xl text-slate-600 mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto animate-slide-up font-medium px-4" style={{ animationDelay: '0.1s' }}>
+        <p className="text-sm xs:text-base md:text-xl text-slate-600 mb-6 md:mb-10 leading-relaxed max-w-2xl mx-auto animate-slide-up font-medium px-4" style={{ animationDelay: '0.1s' }}>
           <strong>Advertisers:</strong> Reach customers in their DMs, not their spam folder.<br className="hidden sm:block"/>
           <span className="sm:hidden"> </span>
           <strong>Admins:</strong> Get paid passive income to pin messages & rent covers.
         </p>
 
         {/* Platform Toggle - Optimized for Mobile Touch */}
-        <div className="inline-flex bg-slate-100 p-1.5 rounded-xl mb-8 md:mb-10 animate-slide-up shadow-inner relative z-30 max-w-full overflow-hidden" style={{ animationDelay: '0.15s' }}>
+        <div className="inline-flex bg-slate-100 p-1.5 rounded-xl mb-6 md:mb-10 animate-slide-up shadow-inner relative z-30 max-w-full overflow-hidden" style={{ animationDelay: '0.15s' }}>
             <button 
                 onClick={() => setPlatform('whatsapp')}
                 className={`px-3 py-2.5 md:px-6 md:py-2.5 rounded-lg text-sm font-bold transition-all duration-200 flex items-center gap-2 active:scale-95 touch-manipulation min-w-[110px] md:min-w-[130px] justify-center ${platform === 'whatsapp' ? 'bg-white shadow-md text-[#075E54] ring-1 ring-black/5 scale-[1.02]' : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'}`}
@@ -118,14 +118,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
             <div className="relative group w-full sm:w-auto">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl blur opacity-60 group-hover:opacity-100 transition duration-200 animate-pulse-slow"></div>
               <Button onClick={() => onOpenModal('advertiser')} className="relative w-full sm:w-auto text-base h-12 md:h-14 px-6 md:px-8 bg-slate-900 text-white hover:bg-slate-800 border-none rounded-xl flex items-center justify-center gap-2 font-bold shadow-xl active:scale-[0.98] transition-all touch-manipulation">
-                Find Groups to Rent <ArrowRight size={18} />
+                Find Your Audience <ArrowRight size={18} />
               </Button>
             </div>
             <button 
               onClick={() => onOpenModal('admin')}
               className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 rounded-xl font-bold text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:border-slate-300 shadow-sm transition-all flex items-center justify-center gap-2 active:scale-[0.98] touch-manipulation"
             >
-              <PlayCircle size={20} className="text-indigo-600" /> I run a Local Group
+              <PlayCircle size={20} className="text-indigo-600" /> Monetize My Group
             </button>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-xs font-semibold text-slate-500">
@@ -137,7 +137,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         {/* Logo Trust Section - Optimized Grid for Mobile */}
         <div className="mt-12 md:mt-16 pt-8 border-t border-slate-200/60 max-w-4xl mx-auto animate-slide-up px-4" style={{ animationDelay: '0.3s' }}>
            <p className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Trusted by 500+ Local Businesses</p>
-           <div className="grid grid-cols-2 xs:grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-x-4 gap-y-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+           <div className="grid grid-cols-2 xs:grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-x-4 gap-y-6 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
               <div className="flex justify-center items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700">
                 <Home className="text-indigo-600 w-4 h-4 md:w-6 md:h-6" /> <span>ReMax</span>
               </div>
@@ -157,7 +157,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         </div>
 
         {/* Visual Mockup with Floating Elements */}
-        <div className="relative mx-auto max-w-4xl animate-slide-up perspective-1000 mt-12 md:mt-20 origin-top" style={{ animationDelay: '0.4s' }}>
+        <div className="relative mx-auto w-fit max-w-4xl animate-slide-up perspective-1000 mt-12 md:mt-20 origin-top" style={{ animationDelay: '0.4s' }}>
            
            {/* Floating Card: Earnings (Hidden on small mobile) */}
            <div className="hidden md:flex absolute top-20 -left-12 lg:-left-24 z-20 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/50 animate-float items-center gap-3">
@@ -195,7 +195,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                <div className={`absolute top-0 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) ${
                    platform === 'whatsapp' 
                    ? 'opacity-100 translate-x-0 scale-100 rotate-0 z-20 blur-none' 
-                   : 'opacity-0 -translate-x-24 scale-90 -rotate-6 z-10 pointer-events-none blur-sm'
+                   : 'opacity-0 -translate-x-12 md:-translate-x-24 scale-90 -rotate-6 z-10 pointer-events-none blur-sm'
                }`}>
                     <MockupWhatsappGroup />
                </div>
@@ -204,7 +204,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                <div className={`absolute top-0 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) ${
                    platform === 'facebook' 
                    ? 'opacity-100 translate-x-0 scale-100 rotate-0 z-20 blur-none' 
-                   : 'opacity-0 translate-x-24 scale-90 rotate-6 z-10 pointer-events-none blur-sm'
+                   : 'opacity-0 translate-x-12 md:translate-x-24 scale-90 rotate-6 z-10 pointer-events-none blur-sm'
                }`}>
                     <MockupFacebookGroup />
                </div>

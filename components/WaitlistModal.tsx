@@ -145,7 +145,7 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
                   )}
               </div>
             </div>
-            <button onClick={onClose} className="text-slate-400 hover:text-slate-600 bg-white p-3 -mr-2 rounded-full border border-slate-200 shadow-sm transition-colors focus:outline-none">
+            <button onClick={onClose} className="text-slate-400 hover:text-slate-600 bg-white p-4 -mr-2 rounded-full border border-slate-200 shadow-sm transition-colors focus:outline-none touch-manipulation">
               <X size={20} />
             </button>
           </div>
@@ -299,6 +299,9 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, role, onCl
                    <Button type="submit" className="w-full mt-2 h-12 text-base">
                      Next Step <ArrowRight size={18} />
                    </Button>
+                   <button type="button" onClick={onClose} className="w-full py-3 text-sm font-semibold text-slate-400 hover:text-slate-600 transition-colors">
+                     Cancel
+                   </button>
                 </div>
               )}
 

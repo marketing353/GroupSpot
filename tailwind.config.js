@@ -32,10 +32,12 @@ export default {
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
+        'fade-out': 'fadeOut 0.5s ease-out forwards',
         'slide-up': 'slideUp 0.6s ease-out',
         'slide-in-left': 'slideInLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 3s infinite',
+        'bounce-right': 'bounceRight 1s infinite',
         'float': 'float 6s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out 3s infinite',
         'infinite-scroll': 'infinite-scroll 40s linear infinite',
@@ -45,6 +47,10 @@ export default {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
+        },
+        fadeOut: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
         },
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
@@ -65,6 +71,10 @@ export default {
         shimmer: {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(100%)' },
+        },
+        bounceRight: {
+           '0%, 100%': { transform: 'translateX(0)' },
+           '50%': { transform: 'translateX(3px)' },
         }
       }
     }

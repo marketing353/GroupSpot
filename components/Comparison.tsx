@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, X } from 'lucide-react';
+import { Check, X, ArrowRight } from 'lucide-react';
 
 export const Comparison: React.FC = () => {
   return (
@@ -10,12 +10,19 @@ export const Comparison: React.FC = () => {
            <p className="text-slate-600 text-lg">See how GroupSpot stacks up against traditional ads.</p>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden relative">
+        <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden relative group">
            
            {/* Scroll Hint Gradient - Mobile Only */}
            <div className="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none md:hidden z-10"></div>
            
-           <div className="overflow-x-auto pb-2 md:pb-0">
+           {/* Animated Swipe Hint Overlay */}
+           <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none md:hidden animate-fade-out opacity-0" style={{animation: 'fadeOut 2s ease-in 2s forwards'}}>
+              <div className="bg-slate-900/80 backdrop-blur text-white px-4 py-2 rounded-full flex items-center gap-2 text-sm font-bold shadow-xl">
+                 Swipe <ArrowRight size={16} className="animate-bounce-right" />
+              </div>
+           </div>
+
+           <div className="overflow-x-auto pb-2 md:pb-0 relative z-0">
              <div className="min-w-[600px]">
                <div className="grid grid-cols-3 bg-slate-50 border-b border-slate-200">
                   <div className="p-5 md:p-6 font-bold text-slate-500 text-xs md:text-sm uppercase tracking-wider">Feature</div>
