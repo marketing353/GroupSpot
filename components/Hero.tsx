@@ -137,7 +137,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         {/* Logo Trust Section - Optimized Grid for Mobile */}
         <div className="mt-12 md:mt-16 pt-8 border-t border-slate-200/60 max-w-4xl mx-auto animate-slide-up px-4" style={{ animationDelay: '0.3s' }}>
            <p className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Trusted by 500+ Local Businesses</p>
-           <div className="grid grid-cols-2 xs:grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-x-4 gap-y-6 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+           <div className="grid grid-cols-2 xs:grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-x-4 gap-y-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
               <div className="flex justify-center items-center gap-2 font-display font-bold text-sm md:text-xl text-slate-700">
                 <Home className="text-indigo-600 w-4 h-4 md:w-6 md:h-6" /> <span>ReMax</span>
               </div>

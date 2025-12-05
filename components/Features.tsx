@@ -25,7 +25,7 @@ export const Features: React.FC = () => {
                       <MapPin size={24} />
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-3 font-display">Don't guess. Target exactly who you want.</h3>
-                    <p className="text-slate-600 max-w-md text-lg">Stop wasting budget on broad impressions. Rent the header of "Moms in Oakville" (FB) or pin a message in "GTA Investors" (WhatsApp).</p>
+                    <p className="text-slate-600 max-w-md text-base md:text-lg leading-relaxed">Stop wasting budget on broad impressions. Rent the header of "Moms in Oakville" (FB) or pin a message in "GTA Investors" (WhatsApp).</p>
                 </div>
                 
                 <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -49,7 +49,7 @@ export const Features: React.FC = () => {
                 <MessageCircle size={24} />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2 font-display">100% Viewability</h3>
-              <p className="text-slate-500 leading-relaxed">Pinned messages on WhatsApp trigger a notification and stay at the top. It's impossible to miss.</p>
+              <p className="text-slate-500 leading-relaxed text-sm md:text-base">Pinned messages on WhatsApp trigger a notification and stay at the top. It's impossible to miss.</p>
            </div>
 
            {/* Small Card 2: Facebook */}
@@ -58,7 +58,7 @@ export const Features: React.FC = () => {
                 <ShieldCheck size={24} />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2 font-display">Instant Authority</h3>
-              <p className="text-slate-500 leading-relaxed">The Cover Photo is the "Billboard" of the group. Being there implies the Admin trusts you.</p>
+              <p className="text-slate-500 leading-relaxed text-sm md:text-base">The Cover Photo is the "Billboard" of the group. Being there implies the Admin trusts you.</p>
            </div>
 
            {/* Large Card 2: Trust (Dark Mode) */}
@@ -72,7 +72,7 @@ export const Features: React.FC = () => {
                     <Zap size={24} />
                   </div>
                   <h3 className="text-2xl font-bold mb-3 font-display">Trust Transfer Technology™</h3>
-                  <p className="text-slate-400 text-lg leading-relaxed">When a Community Admin posts your content, trust transfers from the group leader to your brand. It's word-of-mouth at scale.</p>
+                  <p className="text-slate-400 text-base md:text-lg leading-relaxed">When a Community Admin posts your content, trust transfers from the group leader to your brand. It's word-of-mouth at scale.</p>
                 </div>
                 
                 {/* Stat Graphic */}
