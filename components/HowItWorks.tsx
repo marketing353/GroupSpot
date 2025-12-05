@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, MessageSquare, CreditCard, ArrowRight } from 'lucide-react';
+import { Search, MessageSquare, CreditCard } from 'lucide-react';
 
 export const HowItWorks: React.FC = () => {
   const steps = [
